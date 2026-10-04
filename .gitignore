@@ -1,0 +1,13 @@
+# dependencies
+node_modules/
+
+# test scratch space (an isolated Minecraft instance is created here)
+test/.tmp/
+
+# logs and local plugin data
+*.log
+.DS_Store
+Thumbs.db
+
+# never commit credentials
+credentials.json

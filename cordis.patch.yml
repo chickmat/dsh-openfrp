@@ -1,0 +1,6 @@
+# dsh-openfrp bundle patch: inserts the plugin row into the profile roster.
+# The row is a bare plugin by package name; the plugin has no browser half
+# (no custom GUI) — the agent is the interface.
+- insert:
+    - id: openfrp
+      name: dsh-openfrp

@@ -1,0 +1,76 @@
+{
+  "name": "dsh-openfrp",
+  "version": "0.1.0",
+  "description": "Let DeepSeek Harness actually see and drive OpenFrp tunnels and local services — tunnel lifecycle, live service logs, RCON commands and evidence-based diagnosis, with no human relay. 让 DeepSeek Harness 拥有自己的眼睛和手：OpenFrp 隧道生命周期、本地服务实时日志、命令注入与证据级诊断。",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "skills",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chickmat/dsh-openfrp.git"
+  },
+  "homepage": "https://github.com/chickmat/dsh-openfrp#readme",
+  "bugs": {
+    "url": "https://github.com/chickmat/dsh-openfrp/issues"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "dsh",
+    "openfrp",
+    "frp",
+    "frpc",
+    "tunnel",
+    "port-forward",
+    "minecraft",
+    "rcon",
+    "内网穿透"
+  ],
+  "engines": {
+    "node": "^22.19.0 || >=24.5.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*",
+    "@deepseek-ai/dsh-tools": "*",
+    "@deepseek-ai/schemastery": "*"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    },
+    "@deepseek-ai/schemastery": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "tweetnacl": "^1.0.3"
+  },
+  "scripts": {
+    "test": "node test/pure.test.mjs && node test/tools-contract.test.mjs && node test/param-delivery.test.mjs",
+    "test:load": "node --preserve-symlinks test/plugin-load.test.mjs",
+    "test:export": "node test/export.test.mjs",
+    "test:mc": "node test/integration-mc.mjs",
+    "test:live": "node test/live-openfrp.mjs",
+    "test:live-fixes": "node test/live-fixes.mjs",
+    "test:all": "npm test && npm run test:load && npm run test:export"
+  }
+}

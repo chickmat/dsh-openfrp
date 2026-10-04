@@ -1,0 +1,4 @@
+﻿# Normalize line endings for a JavaScript project: store LF in the repo.
+# The .ps1/.bat files the plugin generates at run time are never committed, and
+# they are written with the endings they need by the generator itself.
+* text=auto eol=lf
